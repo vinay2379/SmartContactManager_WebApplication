@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>addContact page</title>
+</head>
+<body>
+	<section>
+		<div class=card>
+			<div class="card-body">
+
+				<div class="container">
+
+					<div class="row">
+						<div class=" col-md-6 offset-md-3">
+
+
+							<form style="width: 350px; font-size: 1.0rem;"
+								th:action="@{/register2}" th:object="${contact}">
+
+
+								  <div th:if="${session.message}"
+									th:classappend="${session.message.type}" class="alert"
+									role="alert">
+
+									<p th:text="${session.message.content}"></p>
+                                      
+								</div> 
+                                    
+								<div class="jumbotron">
+									<div class="form-group">
+										<label style="font-size: 2.0rem; color: red">Add
+											Contact Here</label>
+									</div>
+
+
+
+									<div class="form-group">
+										<label>Name</label> <input type="text" name="name"
+											 class="form-control"
+											placeholder="Name" required="required">
+									</div>
+									<div class="form-group">
+										<label>SecondName</label> <input type="text" name="secondName"
+											 class="form-control"
+											placeholder="secondName" required="required">
+									</div>
+									<div class="form-group">
+										<label>work</label> <input type="text" name="work"
+											class="form-control"
+											placeholder="work" required="required">
+									</div>
+
+
+									<div class="form-group">
+										<label for="exampleInputEmail1">email</label> <input
+											type="email" name="email" class="form-control"
+											 id="exampleInputEmail1"
+											placeholder="email">
+									</div>
+									<div class="form-group">
+										<label>Phone Number</label> <input type="number" name="phone"
+											class="form-control" placeholder="phone number">
+									</div>
+									<br>
+									<div class="form-group">
+										<textarea rows="7" name="discrption" id="mytextarea" class="form-control"
+											
+											placeholder=" discrption your self"></textarea>
+									</div>
+
+									
+									
+									<br> <br>
+
+									<button type="submit" class="btn btn-primary">add Contact</button>
+									<button type="reset" class="btn btn-primary">Reset</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+	</section>
+
+
+
+</body>
+</html>

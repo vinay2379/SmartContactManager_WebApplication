@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	>
+<head>
+<meta charset="ISO-8859-1">
+<title>addContact page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+</head>
+<body>
+	<section>
+		<div class=card>
+			<div class="card-body">
+
+				<div class="container">
+
+					<div class="row">
+						<div class=" col-md-6 offset-md-3">
+
+
+							<form style="width: 350px; font-size: 1.0rem;" method="post"
+								th:action="@{/register3}" th:object="${contact}">
+
+
+								<!-- <div th:if="${session.message}"
+									th:classappend="${session.message.type}" class="alert"
+									role="alert">
+
+									<p th:text="${session.message.content}"></p>
+
+								</div> -->
+
+								<div class="jumbotron">
+									<div class="form-group">
+										<label style="font-size: 2.0rem; color: red"> Update
+											Contact </label>
+									</div>
+									<input type="hidden" name="cid" class="form-control" th:value="${contact.cid}">
+									
+									
+									<div class="form-group">
+										<label>Name</label> <input th:value="${contact.name}" type="text" name="name"
+											class="form-control" placeholder="Name" required="required">
+									</div>
+									<div class="form-group">
+										<label>SecondName</label> <input th:value="${contact.secondName}" type="text" name="secondName"
+											class="form-control" placeholder="secondName"
+											required="required">
+									</div>
+									<div class="form-group">
+										<label>work</label> <input th:value="${contact.work}" type="text" name="work"
+											class="form-control" placeholder="work" required="required">
+									</div>
+
+
+									<div class="form-group">
+										<label for="exampleInputEmail1">email</label> <input th:value="${contact.email}"
+											type="email" name="email" class="form-control"
+											id="exampleInputEmail1" placeholder="email">
+									</div>
+									<div class="form-group">
+										<label>Phone Number</label> <input th:value="${contact.phone}" type="number" name="phone"
+											class="form-control" placeholder="phone number">
+									</div>
+									<br>
+									<div class="form-group">
+										<textarea rows="7" name="discrption" id="mytextarea"
+											class="form-control" placeholder=" discrption your self"></textarea>
+									</div>
+
+
+
+									<br> <br>
+
+									<button type="submit" class="btn btn-primary">Update</button>
+									<button type="reset" class="btn btn-primary">Reset</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script
+			src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+			referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector : '#mytextarea'
+			});
+		</script>
+	</section>
+
+
+
+</body>
+</html>

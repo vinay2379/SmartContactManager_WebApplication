@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+body{
+	background: #e2e2e2;
+}
+.bg-primary{
+	background: #009688!important;
+}
+.banner{
+	width: 100%;
+	height:93vh;
+	background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)) , url("../img/p1.jpg");
+	background-size: cover;
+	color: white;
+}
+
+.sidebar{
+	with: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	
+	
+	
+	
+}
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+	}
+	.sidebar a:hover{
+	background: #e2e2e2;
+	}
+	.sidebar .divider{
+	height: 5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 20px;
+	}
+	
+.content{
+	margin-left: 18%;
+}
+
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0%;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+  
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-3">
+			<div class="card-body">
+				<h1 class="text-center">list of contact</h1>
+				<table class="table table-hover table-dark">
+					<thead>
+						<tr>
+							<th scope="col">id</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">phone</th>
+							<th scope="col">action</th>
+							<th scope="col">action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each=" c : ${contact}">
+							<th scope="row" th:text="${'SCM2022'+c.cid}">1</th>
+							<td th:text="${c.name}">Mark</td>
+							<td th:text="${c.email}">Otto</td>
+							<td th:text="${c.phone}">@mdo</td>
+							<td><a th:href="@{'delete/'+${c.cid}}"
+								class="btn btn-danger btn-s">delete</a>
+								</td>
+								<td>
+								<form method="post" th:action="@{'/update/'+${c.cid}}">
+									<button type="submit" class="btn btn-primary btn-s">update</button>
+								</form>
+								</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base2::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>login page</title>
+</head>
+<body>
+<section>
+
+ <div class="container">
+ <h1 class="text-center"><i class="fa-solid fa-user"></i>    <span th:text="${user.name}"></span></h1>
+ <table class="table table-hover table-dark">
+
+					<thead>
+					
+						<tr>
+							<th scope="col">id</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">role</th>
+							<th scope="col">enabled</th>
+							<th scope="col">about</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr >
+							<td th:text="${user.id}">hagjag</td>
+							<td th:text="${user.name}">hagjag</td>
+							<td th:text="${user.email}">hagjag</td>
+							<td th:text="${user.role}">hagjag</td>
+							<td th:text="${user.enabled}">hagjag</td>
+							<td th:text="${user.about}">hagjag</td>
+						</tr>
+
+					</tbody>
+				</table>
+ </div>
+
+
+
+</section>
+
+
+
+</body>
+</html>
